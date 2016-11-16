@@ -1,6 +1,8 @@
 
 <%= month_calendar events: @events do |date, events| %>
-<% if date.to_s == Time.now.strftime("%Y-%m-%d") %>
+<strong><%= date.day %></strong> <br>
+
+<% if date.to_s == Time.now.strftime("%Y-%m-%d") && Time.now.strftime("%H").to_i < 12  %>
   <% if events.length < 2 %>
     <%= link_to "Create Your Tasks", new_event_path%>
   <% end %>
@@ -9,7 +11,6 @@
 <% if Time.now.strftime("%H").to_i > 12 && date.to_s == Time.now.strftime("%Y-%m-%d")%>
  <%= link_to "Go over daily tasks", check_index_path %>
 <% end %>
-  <strong><%= date.day %></strong>
 
   <% events.each do |event| %>
     <div>
