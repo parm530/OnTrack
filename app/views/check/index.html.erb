@@ -1,4 +1,4 @@
 <% @events.each do |e| %>
 <%= e.description %> |
-<%= button_to "Mark as complete", e, :method => :delete %>
+<%= button_to "Mark as complete", e, :method => :complete %>
 <% end %>
