@@ -1,5 +1,12 @@
-<%= month_calendar do |date| %>
+<%= month_calendar events: @events do |date, events| %>
+  <strong><%= date.day %></strong>
 
-  <%= date.day %>
-
+  <% events.each do |event| %>
+    <div>
+      <i><%= event.start_time.strftime("%I:%M %p") %></i>
+      <%= event.description %>
+    </div>
+  <% end %>
 <% end %>
+
+<%= button_to "Create Event", new_event_path, method: "get" %>
