@@ -4,9 +4,10 @@
   <% events.each do |event| %>
     <div>
       <i><%= event.start_time.strftime("%I:%M %p") %></i>
-      <%= event.description %>
+      <%= link_to "#{event.description}", events_path(event) %>
     </div>
   <% end %>
 <% end %>
 
 <%= button_to "Create Event", new_event_path, method: "get" %>
+<%= link_to "Home", root_path %>
