@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
       to: '+17182005194',
       body: "hay"
     ) 
-     redirect_to new_event 
+     redirect_to root_path
   end
  
   private
