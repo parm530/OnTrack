@@ -1,3 +1,4 @@
+
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
@@ -25,6 +26,7 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+    
     @event = Event.new(event_params)
 
     respond_to do |format|
@@ -65,6 +67,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
+
       @event = Event.find(params[:id])
     end
 
