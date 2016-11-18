@@ -19,4 +19,6 @@
 
 # Learn more: http://github.com/javan/whenever
 
- 
+every :hour do 
+ runner "SomeModel.ladeeda"
+end

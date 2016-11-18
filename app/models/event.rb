@@ -2,7 +2,7 @@ class Event < ApplicationRecord
 
   def remind?
     if self.start_time.strftime("%Y %m %d %H") == Time.now.strftime("%Y %m %d %H")
-      if self.start_time.min - Time.now.min == 15
+      if self.start_time.min - Time.now.min <= 30
         true
       end
     end
