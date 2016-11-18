@@ -15,7 +15,6 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-    redirect_to send_sms_messages_path
   end
 
   # GET /events/1/edit

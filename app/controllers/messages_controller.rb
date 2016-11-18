@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
       to: '+17182005194',
       body: "hay"
     ) 
-     redirect_to root_path
+     redirect_to root_path, alert: 'Event was successfully created.'
   end
  
   private
