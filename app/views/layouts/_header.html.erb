@@ -3,7 +3,7 @@
       <% if user_signed_in? %>
          Signed in as <%= current_user.email %><br>
            <%= link_to "Sign out", destroy_user_session_path, :method => "delete" %><br>
-             <%= link_to "Home", root_path %><br>
+             <%= link_to "Home", root_path ,{ :'data-no-turbolink' =>  "true" }%><br>
           <%= link_to "My Dashboard", root_path %>
 
         <% elsif !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)   %>
