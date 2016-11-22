@@ -1,3 +1,4 @@
+
 class EventsController < ApplicationController
   before_action :set_event, only: [:show, :edit, :update, :destroy]
 
@@ -15,7 +16,12 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+<<<<<<< HEAD
   end 
+=======
+    @user = current_user
+  end
+>>>>>>> master
 
   # GET /events/1/edit
   def edit
@@ -24,7 +30,13 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+<<<<<<< HEAD
     @event = Event.new(event_params)
+=======
+
+    @event = Event.new(event_params)
+    @event.user_id = current_user.id
+>>>>>>> master
     respond_to do |format|
       if @event.save
         @@pending << @event
@@ -43,6 +55,7 @@ class EventsController < ApplicationController
   # PATCH/PUT /events/1
   # PATCH/PUT /events/1.json
   def update
+
     respond_to do |format|
       if @event.update(event_params)
         format.html { redirect_to @event, notice: 'Event was successfully updated.' }
@@ -67,6 +80,7 @@ class EventsController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_event
+
       @event = Event.find(params[:id])
     end
 

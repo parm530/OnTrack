@@ -1,4 +1,5 @@
 class Event < ApplicationRecord
+
   @@pending = []
   
   def remind?
@@ -20,6 +21,8 @@ class Event < ApplicationRecord
       )
     end
   end
+
+  belongs_to :user
 
 end
  

@@ -18,4 +18,11 @@ Rails.application.routes.draw do
   resources :check
 
   
-end
+
+
+  resources :checks
+  resources :users
+
+  get "/dashboard", to: "welcome#dashboard"
+
+ end

@@ -1,4 +1,6 @@
-<% @events.each do |e| %>
-<%= e.description %> |
-<%= button_to "Mark as complete", e, :method => :delete %>
+ CHECK YOUR SUCCESSFULLY COMPLETED EVENTS AND CLICK ENTER
+
+<%= form_for @check do |f| %>
+<%= f.collection_check_boxes :id, @events, :id, :description %>
+<%= f.submit %>
 <% end %>
