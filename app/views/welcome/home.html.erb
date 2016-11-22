@@ -41,7 +41,7 @@
     <% end %>
   <% end%>
 
-  <% if Time.now.strftime("%H").to_i > 12 && date.to_s == Time.now.strftime("%Y-%m-%d")%>
+  <% if Time.now.strftime("%H").to_i > 5 && date.to_s == Time.now.strftime("%Y-%m-%d")%>
    <%= link_to "Mark tasks", checks_path %>
   <% end %>
 

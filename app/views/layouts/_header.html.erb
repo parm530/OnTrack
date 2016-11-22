@@ -1,14 +1,52 @@
 <nav class="nav">
 
-      <% if user_signed_in? %>
-         Signed in as <%= current_user.email %><br>
-           <%= link_to "Sign out", destroy_user_session_path, :method => "delete" %><br>
-             <%= link_to "Home", root_path ,{ :'data-no-turbolink' =>  "true" }%><br>
-          <%= link_to "My Dashboard", dashboard_path %>
+<% if user_signed_in? %>
+  <ul class="topnav" id="myTopnav">
+   <li><%= link_to "Home", root_path ,{ :'data-no-turbolink' =>  "true" }%></li>
+   <li> <%= link_to "My Dashboard", dashboard_path %></li>
+   <li><%= link_to "Events List", events_path %>></li>
+   <li><%= link_to "Sign Out", destroy_user_session_path, :method => "delete" %></li>
+   <li class="icon">
+     <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+   </li>
+  </ul>
 
-        <% elsif !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)   %>
-         <%= link_to "Sign in", new_user_session_path %> <br>
-         <%= link_to "Sign up", new_user_registration_path %>
-        <% end %>
+
+  <script>
+  function myFunction() {
+     var x = document.getElementById("myTopnav");
+     if (x.className === "topnav") {
+         x.className += " responsive";
+     } else {
+         x.className = "topnav";
+     }
+  }
+  </script>
+  <% elsif !current_page?(new_user_session_path) && !current_page?(new_user_registration_path)   %>
+
+  <ul class="topnav" id="myTopnav">
+   <li><%= link_to "Home", root_path ,{ :'data-no-turbolink' =>  "true" }%></li>
+   <li><a href="#news">Dashboard</a></li>
+   <li><a href="#contact">Contact</a></li>
+   <li><a href="#about">About</a></li>
+   <li class="icon">
+     <a href="javascript:void(0);" style="font-size:15px;" onclick="myFunction()">☰</a>
+   </li>
+  </ul>
+
+
+  <script>
+  function myFunction() {
+     var x = document.getElementById("myTopnav");
+     if (x.className === "topnav") {
+         x.className += " responsive";
+     } else {
+         x.className = "topnav";
+     }
+  }
+    <% end %>
+
+
+
 
 </nav>

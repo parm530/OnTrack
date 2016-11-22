@@ -14,11 +14,11 @@
   <tbody>
     <% @events.each do |event| %>
       <tr>
-        <td><%= event.description %></td>
-        <td><%= event.start_time %></td>
-        <td><%= link_to 'Show', event %></td>
-        <td><%= link_to 'Edit', edit_event_path(event) %></td>
-        <td><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><h2><%= event.description %></h2></td>
+        <td><h2><%= event.start_time %></h2></td>
+        <td><h2><%= link_to 'Show', event %></h2></td>
+        <td><h2><%= link_to 'Edit', edit_event_path(event) %></h2></td>
+        <td><h2><%= link_to 'Destroy', event, method: :delete, data: { confirm: 'Are you sure?' } %></h2></td>
       </tr>
     <% end %>
   </tbody>
@@ -26,4 +26,4 @@
 
 <br>
 
-<%= link_to 'New Event', new_event_path %>
+<%= button_to 'New Event', new_event_path, method: "get" %>
