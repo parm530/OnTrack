@@ -12,12 +12,14 @@ class MessagesController < ApplicationController
     ) 
   end
 
-  def send_sms
-    @client.account.messages.create(
-      from: "+13474175794",
-      to: '+17182005194',
-      body: "hay"
-    ) 
+  def send
+    @event = Event.find_by(id: params[:event_id])
+    Event.send_sms(@event, @client)
+    # @client.account.messages.create(
+    #   from: "+13474175794",
+    #   to: '+17182005194',
+    #   body: "Reminder, you have an event: #{@event.description} in 30 min!"
+    # ) 
      redirect_to root_path, alert: 'Event was successfully created.'
   end
  

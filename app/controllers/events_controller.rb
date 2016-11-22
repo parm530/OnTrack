@@ -15,7 +15,7 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
-  end
+  end 
 
   # GET /events/1/edit
   def edit
@@ -27,7 +27,10 @@ class EventsController < ApplicationController
     @event = Event.new(event_params)
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        @@pending << @event
+        # format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to event_sendsms_path(@event), notice: 'Event was successfully created.' }
+
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }
