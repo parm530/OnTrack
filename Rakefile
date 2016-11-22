@@ -4,3 +4,9 @@
 require_relative 'config/application'
 
 Rails.application.load_tasks
+
+desc 'Checks to see if any events are upcoming, then sends an sms reminder'
+task :check_for_reminder do 
+  puts "hello from Rake!"
+  
+end
