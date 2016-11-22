@@ -9,10 +9,14 @@
 //     })
 // });
 
+// document.addEventListener('page:load', eventFormToggle)
+$(document).on('turbolinks:load',eventFormToggle)
+$('document').ready(function(){
+console.log("loading js");
 
-
-$('document').ready(function() {
-  $('td').on("click", function(){
+})
+function eventFormToggle() {
+  $('td').on("click",function(){
     var $cell = $(($(this).children()[2]))
     $('.calendar-cell').css("visibility", "hidden");
     $cell.css("visibility", "visible");
@@ -20,4 +24,4 @@ $('document').ready(function() {
     $cell[0].children[0].children[3].children[1].style.display = "none";
     $cell[0].children[0].children[3].children[2].style.display = "none";
   })
-})
+  }
