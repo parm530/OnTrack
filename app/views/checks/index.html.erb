@@ -1,0 +1,6 @@
+ CHECK YOUR SUCCESSFULLY COMPLETED EVENTS AND CLICK ENTER
+
+<%= form_for @check do |f| %>
+<%= f.collection_check_boxes :id, @events, :id, :description %>
+<%= f.submit %>
+<% end %>
