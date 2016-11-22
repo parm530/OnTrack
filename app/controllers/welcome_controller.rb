@@ -11,5 +11,9 @@ class WelcomeController < ApplicationController
   def dashboard
     events = current_user.events.where('status = ?', true)
     @events = events.where('start_time <= ?', Time.now)
+    if @events.all.size != 0
+      redirect_to events_path
    end
+ end
+
 end

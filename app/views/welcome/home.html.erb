@@ -1,6 +1,8 @@
-
+<div class="center">
 <h2>"<%= @quote.description %>"</h2>
 <h3>-<i><%= @quote.author %></i></h3>
+</div>
+
 <main style="background-image: linear-gradient(to bottom,rgba(255,255,255, 0.2), rgba(255,255,255, 0.2)), url(<%= Wallpaper.all.sample.link %>)">
   <%= month_calendar events: @events do |date, events| %>
   <strong><%= date.day %></strong> <br>
@@ -46,12 +48,11 @@
   <% end %>
 
     <% events.each do |event| %>
-      <div>
+      <div class="field">
         <i><%= event.start_time.strftime("%I:%M %p") %></i>
-        <%= link_to "#{event.description}", event_path(event) %>
+        <%= link_to "#{event.description}", event_path(event), { :class => 'field'} %>
       </div>
     <% end %>
   <% end %>
 </main>
-<%= button_to "Create Event", new_event_path, method: "get" %>
-<%= link_to "Home", root_path %>
+

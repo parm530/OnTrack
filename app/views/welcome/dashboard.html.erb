@@ -1,12 +1,15 @@
-<% points = (100 - (current_user.events.all.count - @events.count)*100 /current_user.events.all.count)  %>
-<h1>You have <%= points  %>% successful events
-!</h1>
-<h2>
- <% if points < 33 %>
-<%= "You need to try harder." %>
-<% elsif  points < 66 %>
-<%= "You are not consistent enough, but good work" %>
-<% else %>
-<%= "Great Work you are on your way to success!" %>
-<% end %>
-</h2>
+<br>
+<div class="center">
+  <% points = (100 - (current_user.events.all.count - @events.count)*100 /current_user.events.all.count)  %>
+  <h1>You have <%= points  %>% successful events!</h1>
+  <h2>
+    <% if points < 33 %>
+    <%= "You need to try harder." %>
+    <% elsif  points < 66 %>
+    <%= "You are not consistent enough, but good work" %>
+    <% else %>
+    <%= "Great Work you are on your way to success!" %>
+    <% end %>
+  </h2>
+
+</div>
