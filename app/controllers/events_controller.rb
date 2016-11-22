@@ -28,6 +28,7 @@ class EventsController < ApplicationController
     respond_to do |format|
       if @event.save
         @@pending << @event
+        binding.pry
         # format.html { redirect_to @event, notice: 'Event was successfully created.' }
         format.html { redirect_to event_sendsms_path(@event), notice: 'Event was successfully created.' }
 
