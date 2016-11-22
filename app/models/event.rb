@@ -5,6 +5,7 @@ class Event < ApplicationRecord
     if self.start_time.strftime("%Y %m %d %H") == Time.now.strftime("%Y %m %d %H")
       if self.start_time.min - Time.now.min <= 30
         return true
+        true
       end
     end
     return false

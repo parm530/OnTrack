@@ -24,3 +24,8 @@ every 1.minute do # Many shortcuts available: :hour, :day, :month, :year, :reboo
    binding.pry
    runner 'Event.send_sms'
 end
+
+every :hour do 
+ runner "SomeModel.ladeeda"
+end
+
