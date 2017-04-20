@@ -16,8 +16,12 @@ class EventsController < ApplicationController
   # GET /events/new
   def new
     @event = Event.new
+<<<<<<< HEAD
+  end 
+=======
     @user = current_user
   end
+>>>>>>> master
 
   # GET /events/1/edit
   def edit
@@ -26,12 +30,20 @@ class EventsController < ApplicationController
   # POST /events
   # POST /events.json
   def create
+<<<<<<< HEAD
+    @event = Event.new(event_params)
+=======
 
     @event = Event.new(event_params)
     @event.user_id = current_user.id
+>>>>>>> master
     respond_to do |format|
       if @event.save
-        format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        @@pending << @event
+        binding.pry
+        # format.html { redirect_to @event, notice: 'Event was successfully created.' }
+        format.html { redirect_to event_sendsms_path(@event), notice: 'Event was successfully created.' }
+
         format.json { render :show, status: :created, location: @event }
       else
         format.html { render :new }

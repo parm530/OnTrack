@@ -19,6 +19,19 @@
 
 # Learn more: http://github.com/javan/whenever
 
+<<<<<<< HEAD
+ 
+every 1.minute do # Many shortcuts available: :hour, :day, :month, :year, :reboot
+   binding.pry
+   runner 'Event.send_sms'
+end
+
+every :hour do 
+ runner "SomeModel.ladeeda"
+end
+
+=======
 every 1.day, :at => '9:00 am' do
   runner "Event.morning_prompt"
 end
+>>>>>>> master
